@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Software Engineering project
+Main-Class: application.Application
+Class-Path: 

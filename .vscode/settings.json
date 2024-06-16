@@ -1,0 +1,50 @@
+//-----------------------------------------------------------------------------
+// Project settings for VSCode
+//
+// used in conjunction with system-side settings.json file
+// (on Windows in: C:/Users/<user>/AppData/Roaming/Code/User/settings.json)
+//-----------------------------------------------------------------------------
+{
+    // terminal configuration to source the project when new terminal is opened
+    // see: https://code.visualstudio.com/docs/terminal/profiles
+    // 
+    "terminal.integrated.profiles.windows": {
+
+        "Bash": {
+          "path": ["bash"],             // use bash.exe
+          "args": ["--init-file", "'${workspaceFolder}'/.vscode/launch_terminal.sh"],
+          "icon": "terminal-bash",
+        },
+
+        "Cmd": {
+            "path": ["cmd"],            // use cmd.exe
+        },
+
+        "PowerShell": {
+            "path": "powershell",       // use powershell.exe
+            // "args": ["-noexit", "-file", "${env:APPDATA}\\PowerShell\\custom-init.ps1"],
+            "args": ["-noexit"],
+        },
+
+        "Git Bash": null,               // remove other terminals from menu
+        "Command Prompt": null,
+        "JavaScript Debug Terminal": null,
+    },
+    "terminal.integrated.defaultProfile.windows": "Bash",
+
+    // Run/Debug Java launcher issues "C:\\" java path, use cmd.exe or powershell.exe
+    "terminal.integrated.automationProfile.windows": {
+        "path": "cmd"
+    },
+
+    // Java code runner properties
+    "code-runner.defaultLanguage": "java",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        // "javac": "javac @.env/.modulepath -d bin/classes src/main/application/Application.java",
+        // "java": "cp -R src/resources bin && java @.env/.classpath application.Application"
+        "java": "java @.env/.classpath application.Application A B C",
+    },
+
+    "java.debug.settings.onBuildFailureProceed": true,
+}
